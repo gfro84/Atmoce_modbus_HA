@@ -1,0 +1,170 @@
+# Atmoce modbus configuation single phase
+#
+  - name: Atmoce
+    type: tcp
+    host: 192.168.x.x
+    port: 502
+    delay: 5
+    timeout: 10
+    #
+    sensors:
+    # GRID SENSORS
+      - name: Grid Voltage
+        unique_id: atmoce_grid_voltage
+        device_address: !secret atmoce_modbus_slave
+        address: 60089 
+        input_type: holding
+        data_type: uint16
+        precision: 1
+        unit_of_measurement: V
+        device_class: Voltage
+        scale: 0.1
+        scan_interval: 10
+#
+      - name: Grid Current
+        unique_id: atmoce_grid_current
+        device_address: !secret atmoce_modbus_slave
+        address: 60090 
+        input_type: holding
+        data_type: int16
+        precision: 2
+        unit_of_measurement: A
+        state_class: measurement
+        device_class: Current
+        scale: 0.01
+        scan_interval: 10   
+#      
+      - name: Grid Power
+        unique_id: atmoce_grid_power
+        device_address: !secret atmoce_modbus_slave
+        address: 60073 
+        input_type: holding
+        data_type: int32
+        precision: 1
+        unit_of_measurement: W
+        state_class: measurement
+        device_class: power
+        scale: 1
+        scan_interval: 2
+#
+      - name: Grid Energy Daily
+        unique_id: atmoce_grid_energy_daily
+        device_address: !secret atmoce_modbus_slave
+        address: 60188 
+        input_type: holding
+        data_type: uint32
+        precision: 2
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+#
+      - name: Grid Energy Total # Cumulative grid consumption
+        unique_id: atmoce_grid_energy_total
+        device_address: !secret atmoce_modbus_slave
+        address: 60184 
+        input_type: holding
+        data_type: uint64
+        precision: 2
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: total_increasing
+        scale: 0.01
+        scan_interval: 10
+    # PV SENSORS
+      - name: PV Power # Current PV generation power 
+        unique_id: atmoce_pv_power
+        device_address: !secret atmoce_modbus_slave
+        address: 60069 
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: W
+        state_class: measurement
+        device_class: power
+        scale: 1
+        scan_interval: 3
+#        
+      - name: PV Energy Daily # Resets daily
+        unique_id: atmoce_pv_energy_daily
+        device_address: !secret atmoce_modbus_slave
+        address: 60164 
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 10
+#        
+      - name: PV Energy Total # Cumulative PV Generation of all time, use this for HA Energy Dashboard
+        unique_id: atmoce_pv_energy_total
+        device_address: !secret atmoce_modbus_slave
+        address: 60160 
+        input_type: holding
+        data_type: uint64
+        precision: 1
+        unit_of_measurement: kWh
+        device_class: energy
+        state_class: total_increasing
+        scale: 0.01
+        scan_interval: 10
+#
+      - name: Rated PV Power Capacity # Sum of rated power all MIs
+        unique_id: atmoce_pv_rated_power
+        device_address: !secret atmoce_modbus_slave
+        address: 60027
+        input_type: holding
+        data_type: uint32
+        precision: 1
+        unit_of_measurement: kW
+        device_class: energy
+        state_class: measurement
+        scale: 0.01
+        scan_interval: 600
+    # STORAGE SENSORS - untested as not in possession of battery 
+#      - name: Storage Rated Power Capacity # Sum of storage rated power
+#        unique_id: atmoce_storage_rated_power
+#        device_address: !secret atmoce_modbus_slave
+#        address: 60029
+#        input_type: holding
+#        data_type: uint32
+#        precision: 1
+#        unit_of_measurement: kW
+#        device_class: energy
+#        state_class: measurement
+#        scale: 0.01
+#        scan_interval: 600
+#
+#      - name: Storage Rated Energy Capacity
+#        unique_id: atmoce_storage_rated_energy
+#        device_address: !secret atmoce_modbus_slave
+#        address: 60031
+#        input_type: holding
+#        data_type: uint32
+#        precision: 1
+#        unit_of_measurement: kWh
+#        device_class: energy
+#        state_class: measurement
+#        scale: 0.01
+#        scan_interval: 600
+#
+#      - name: Battery Power # Charging/Discharging
+#        unique_id: atmoce_storage_power
+#        device_address: !secret atmoce_modbus_slave
+#        address: 60071 
+#        input_type: holding
+#        data_type: int32
+#        precision: 1
+#        unit_of_measurement: W
+#        state_class: measurement
+#        device_class: power
+#        scale: 1
+#        scan_interval: 10
+        
+        
+        
+        
+        
