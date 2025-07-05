@@ -11,7 +11,7 @@
     # GRID SENSORS
       - name: Grid Voltage
         unique_id: atmoce_grid_voltage
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60089 
         input_type: holding
         data_type: uint16
@@ -23,7 +23,7 @@
 #
       - name: Grid Current
         unique_id: atmoce_grid_current
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60090 
         input_type: holding
         data_type: int16
@@ -36,7 +36,7 @@
 #      
       - name: Grid Power
         unique_id: atmoce_grid_power
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60073 
         input_type: holding
         data_type: int32
@@ -49,7 +49,7 @@
 #
       - name: Grid Energy Daily
         unique_id: atmoce_grid_energy_daily
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60188 
         input_type: holding
         data_type: uint32
@@ -62,7 +62,7 @@
 #
       - name: Grid Energy Total # Cumulative grid consumption
         unique_id: atmoce_grid_energy_total
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60184 
         input_type: holding
         data_type: uint64
@@ -75,7 +75,7 @@
     # PV SENSORS
       - name: PV Power # Current PV generation power 
         unique_id: atmoce_pv_power
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60069 
         input_type: holding
         data_type: uint32
@@ -88,7 +88,7 @@
 #        
       - name: PV Energy Daily # Resets daily
         unique_id: atmoce_pv_energy_daily
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60164 
         input_type: holding
         data_type: uint32
@@ -101,7 +101,7 @@
 #        
       - name: PV Energy Total # Cumulative PV Generation of all time, use this for HA Energy Dashboard
         unique_id: atmoce_pv_energy_total
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60160 
         input_type: holding
         data_type: uint64
@@ -114,7 +114,7 @@
 #
       - name: Rated PV Power Capacity # Sum of rated power all MIs
         unique_id: atmoce_pv_rated_power
-        device_address: !secret atmoce_modbus_slave
+        device_address: 1
         address: 60027
         input_type: holding
         data_type: uint32
@@ -127,7 +127,7 @@
     # STORAGE SENSORS - untested as not in possession of battery 
 #      - name: Storage Rated Power Capacity # Sum of storage rated power
 #        unique_id: atmoce_storage_rated_power
-#        device_address: !secret atmoce_modbus_slave
+#        device_address: 1
 #        address: 60029
 #        input_type: holding
 #        data_type: uint32
@@ -140,7 +140,7 @@
 #
 #      - name: Storage Rated Energy Capacity
 #        unique_id: atmoce_storage_rated_energy
-#        device_address: !secret atmoce_modbus_slave
+#        device_address: 1
 #        address: 60031
 #        input_type: holding
 #        data_type: uint32
@@ -153,7 +153,7 @@
 #
 #      - name: Battery Power # Charging/Discharging
 #        unique_id: atmoce_storage_power
-#        device_address: !secret atmoce_modbus_slave
+#        device_address: 1
 #        address: 60071 
 #        input_type: holding
 #        data_type: int32
