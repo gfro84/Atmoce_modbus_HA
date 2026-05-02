@@ -1,4 +1,7 @@
 # Atmoce_modbus_HA
+
+***There is no longer a need to use this respository, @pacorola has made an integration! https://github.com/pacorola/Atmoce_battery_HA
+
 Atmoce Modbus configuration for Home Assistant
 
 I've recently purchased Atmoce Microinverters, gateway (combiner) and battery. 
