@@ -1,6 +1,6 @@
 # Atmoce_modbus_HA
 
-***There is no longer a need to use this respository, @pacorola has made an integration! https://github.com/pacorola/Atmoce_battery_HA
+***There is no longer a need to use this respository, @pacorola has made an excellent integration! https://github.com/pacorola/Atmoce_battery_HA
 
 Atmoce Modbus configuration for Home Assistant
 
